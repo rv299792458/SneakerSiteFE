@@ -13,6 +13,16 @@
 
     </head>
     <body>
+        <script>
+            function myFunction() {
+              var x = document.getElementById("psw");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+            </script>
         <!--<div class ="header">-->
         <div class="container">
             <div class="navbar">
@@ -54,7 +64,8 @@
                             </div>
                             <form id="LoginForm">
                                 <input type="text" placeholder="username">
-                                <input type="password" placeholder="password">
+                                <input type="password" placeholder="password"  id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                <input type="checkbox" onclick="myFunction()">
                                 <button type="submit" class="btn">Login</button>
                                 <a href="">Forgot password</a>
                             </form>
